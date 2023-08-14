@@ -1,0 +1,24 @@
+
+# pcd dir
+pcd_dir : "C:/Users/1015947658/Desktop/github/SemanticKITTI-visualizer/src/example/pcd"
+pcd_extension : ".bin"
+
+# label dir 
+label_dir : "C:/Users/1015947658/Desktop/github/SemanticKITTI-visualizer/src/example/label"
+label_extension : ".label"
+
+# this store the dataset config
+dataset_cfg_path : "C:/Users/1015947658/Desktop/github/SemanticKITTI-visualizer/src/config/semantic-kitti.yaml"
+
+# this store the viewpoint config, which can copy from open3d GUI (json file)
+viewpoint_cfg_path : "C:/Users/1015947658/Desktop/github/SemanticKITTI-visualizer/src/config/viewpoint.json"
+
+# left top point position
+position : 
+  left : 300
+  top : 100
+  width : 1400
+  height : 800
+
+#pcd point size
+point_size : 2
