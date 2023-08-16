@@ -86,20 +86,34 @@ class Visualizer:
             self.__load_label_lable(self.label_dir[self.index])
         else: 
             raise TypeError(f"label data should end with in {self.label_extension}")
+        self.__print_msg()
+    
+    def __print_msg(self, msg: str = None):
+        if msg is None:
+            print(f"total : {self.index}/{len(self.pcd_dir)-1}")
+        else: 
+            print(f"total : {self.index}/{len(self.pcd_dir)-1}, and {msg}")
     
     def __key_next_callback(self, vis):
-        self.index += 1
-        self.__update_frame()
-        self.vis.update_geometry(self.pcd)
-        self.vis.update_renderer()
-        self.vis.poll_events()
+        if self.index+1 >= 0 and self.index+1 < len(self.pcd_dir):
+            self.index += 1
+            self.__update_frame()
+            self.vis.update_geometry(self.pcd)
+            self.vis.update_renderer()
+            self.vis.poll_events()
+        else: 
+            self.__print_msg(f"Not exist next pcd!")
+        
     
     def __key_back_callback(self, vis):
-        self.index -= 1
-        self.__update_frame()
-        self.vis.update_geometry(self.pcd)
-        self.vis.update_renderer()
-        self.vis.poll_events()
+        if self.index-1 >= 0 and self.index-1 < len(self.pcd_dir):
+            self.index -= 1
+            self.__update_frame()
+            self.vis.update_geometry(self.pcd)
+            self.vis.update_renderer()
+            self.vis.poll_events()
+        else:
+            self.__print_msg(f"Not exist last pcd!")
     
     def run(self):
         if self.pcd_dir is None:

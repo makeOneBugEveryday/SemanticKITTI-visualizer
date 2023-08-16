@@ -1,6 +1,7 @@
 # SemanticKITTI-visualizer
-
 SemanticKITTI-visualizer visualized SemanticKITTI dataset via open3d python 
+
+![running GUI](src/example/demo.png "running GUI")
 
 ## How to config the project?
 First of all you need to change the path to your SemanticKITTI dataset in src/config/visualizer.yaml, in which you can also modify the GUI position and point size of pcd. We provide an example in src/example and its path in visualizer.yaml.
